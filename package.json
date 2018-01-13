@@ -1,0 +1,26 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "make your tasklist today",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monicawheeler/todo-app.git"
+  },
+  "author": "monica",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monicawheeler/todo-app/issues"
+  },
+  "homepage": "https://github.com/monicawheeler/todo-app#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jquery": "^3.2.1",
+    "pg": "^7.4.1"
+  }
+}

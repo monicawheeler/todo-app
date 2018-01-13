@@ -1,11 +1,15 @@
 #Todo Application
 
 ## Database
-- [ ] Create a `todo_app` database
-    - [ ] Create a `tasks` table
-        - [ ] `tasks` table contains columns for id(primary key), description, complete (default 'No'), date created (date when added), category_id (references category table)
-    - [ ] Create a `categories` table
-        - [ ] `categories` table contains columns for id(primary key), description
+- [x] Create a `todo_app` database
+    - [x] Create a `tasks` table
+        - [x] `tasks` table contains columns for id(primary key), description, complete (default 'No'), date\_created (date when added), category\_id (references category table)
+    - [x] Create a `categories` table
+        - [x] `categories` table contains columns for id(primary key), description
+
+## Setup
+- [x] `npm init`
+- [ ] folder and files to get server up
 
 ## DOM
 - [ ] Create input for task 
