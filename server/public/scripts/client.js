@@ -9,7 +9,7 @@ function taskApplication() {
     // Event Listeners
     $('#addTaskButton').on('click', addTask);
     $('#taskList').on('click', '.completeButton', completeTask);
-    $('#taskList').on('click', '.deleteButton', deleteTask);
+    $('#taskList, #completedTasks').on('click', '.deleteButton', deleteTask);
 }
 
 function getTasks() {
