@@ -13,7 +13,7 @@ function getTasks() {
     $.ajax({
         method: 'GET',
         url: '/tasks',
-        succuess: function(response) {
+        success: function(response) {
             console.log('response from GET', response);
             
         }
