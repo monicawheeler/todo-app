@@ -16,4 +16,18 @@ router.get('/', (req, res) => {
         });
 });
 
+// post added task
+router.post('/', (req, res) => {
+    const queryText = 'INSERT INTO tasks (description) VALUES($1)';
+    pool.query(queryText,[req.body.description])
+    // runs on success
+    .then((result) => {
+        res.sendStatus(201);
+    })
+    // error handling
+    .catch((err) => {
+        res.sendStatus(500);
+    });
+});
+
 module.exports = router;

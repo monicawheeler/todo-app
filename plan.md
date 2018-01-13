@@ -19,10 +19,10 @@ Organize DOM as needed along the way
 - [x] Create a container to hold the completed tasks (remove completed button)
 
 ## Client Side (client.js)
-- [ ] POST to send new task to database
-    - [ ] On click of Add Task, send value of task input to database
-    - [ ] Run the function to get the tasks to refresh the list
-- [ ] GET to request all tasks in the database
+- [x] POST to send new task to database
+    - [x] On click of the Add Task button, send value of task input to database
+    - [x] Run the function to get the tasks to refresh the list
+- [x] GET to request all tasks in the database
     - [x] On load of page, get the tasks
     - [x] Loop through response and create a list of tasks 
     - [x] Each task will have a Complete and Delete button
@@ -34,8 +34,8 @@ Organize DOM as needed along the way
     - [ ] Run the function to get the tasks to refresh the list
 
 ## Server Side
-- [ ] post - matching post on client side, get new task
-    - [ ] `INSERT INTO` database
+- [x] post - matching post on client side, get new task
+    - [x] `INSERT INTO` database
 - [x] get - matching get on client side, grab all tasks
     - [x] `SELECT` from database
 - [ ] put - matching put on client side, update complete column
@@ -46,3 +46,4 @@ Organize DOM as needed along the way
 ## Style planning/ideas
 - [ ] [Inspiration for style](https://dribbble.com/shots/3642749-Team-Chat-To-Do/attachments/813699)
 - [ ] Style complete and delete buttons as a checkmark and an 'x'
+- [ ] Move alerts into models
