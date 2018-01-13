@@ -46,6 +46,8 @@ function addTask() {
             success: function (response) {
                 console.log('response', response);
                 getTasks();
+                // clear input field after successful response
+                $('#taskDescription').val('');
             }
         });
     } else {
@@ -56,7 +58,6 @@ function addTask() {
 
 function completeTask() {
     let currentTaskId = $(this).parent().data('id');
-
     $.ajax({
         method: 'PUT',
         url: '/tasks/' + currentTaskId,
@@ -68,7 +69,6 @@ function completeTask() {
 
 function deleteTask() {
     let currentTaskId = $(this).parent().data('id');
-
     $.ajax({
         method: 'DELETE',
         url: '/tasks/' + currentTaskId,
@@ -76,5 +76,4 @@ function deleteTask() {
             getTasks();
         }
     });
-    
 } // end deleteTask
