@@ -34,17 +34,18 @@ Organize DOM as needed along the way
 - [x] DELETE to delete the task in the database 
     - [x] On click of the Delete button, remove task from database
     - [x] Run the function to get the tasks to refresh the list
+- [x] PUT to update the task in the data as uncomplete
 
 ## Server Side
 - [x] post - matching post on client side, get new task
     - [x] `INSERT INTO` database
 - [x] get - matching get on client side, grab all tasks
     - [x] `SELECT` from database
-- [x] put - matching put on client side, update complete column
+- [x] put - matching put on client side, update complete to true
     - [x] `UPDATE` database
 - [x] delete - matching delete on client side, delete entire task
     - [x] `DELETE` database
-
+- [x] put - matching put on client side, update complete to false
 
 ## Style planning/ideas
 - [ ] [Inspiration for style](https://dribbble.com/shots/3642749-Team-Chat-To-Do/attachments/813699)
