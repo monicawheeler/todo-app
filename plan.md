@@ -9,7 +9,7 @@
 
 ## Setup
 - [x] `npm init`
-- [ ] folder and files to get server up
+- [x] folder and files to get server up
 
 ## DOM
 - [ ] Create input for task 

@@ -7,7 +7,7 @@ const PORT = 2828;
 // body parser
 app.use(bodyParser.urlencoded({extended:true}));
 
-// server static files
+// serve static files
 app.use(express.static('server/public'));
 
 // routes
