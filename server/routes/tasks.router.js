@@ -44,4 +44,18 @@ router.put('/:id', (req,res) => {
         });
 });
 
+// delete task from database
+router.delete('/:id', (req,res) => {
+    const queryText = `DELETE FROM tasks WHERE id=$1`;
+    pool.query(queryText, [req.params.id])
+        // runs on successful query
+        .then((result) => {        
+            res.sendStatus(200);
+        })
+        // error handling
+        .catch((err) => {
+            res.sendStatus(500);
+        });
+});
+
 module.exports = router;

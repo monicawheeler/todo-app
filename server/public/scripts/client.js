@@ -9,7 +9,7 @@ function taskApplication() {
     // Event Listeners
     $('#addTaskButton').on('click', addTask);
     $('#taskList').on('click', '.completeButton', completeTask);
-    //$('#taskList').on('click', '.deleteButton', deleteTask);
+    $('#taskList').on('click', '.deleteButton', deleteTask);
 }
 
 function getTasks() {
@@ -65,3 +65,16 @@ function completeTask() {
         }
     });
 } // end completeTask
+
+function deleteTask() {
+    let currentTaskId = $(this).parent().data('id');
+
+    $.ajax({
+        method: 'DELETE',
+        url: '/tasks/' + currentTaskId,
+        success: function(response) {
+            getTasks();
+        }
+    });
+    
+} // end deleteTask
