@@ -24,10 +24,11 @@ Organize DOM as needed along the way
     - [ ] Run the function to get the tasks to refresh the list
 - [ ] GET to request all tasks in the database
     - [x] On load of page, get the tasks
-    - [ ] Loop through response and create a list of tasks 
-    - [ ] Each task will have a Complete and Delete button
+    - [x] Loop through response and create a list of tasks 
+    - [x] Each task will have a Complete and Delete button
 - [ ] PUT to update the task in the database as complete
     - [ ] On click of the Complete button, update database
+    - [ ] Run the function to get the tasks to refresh the list
 - [ ] DELETE to delete the task in the database 
     - [ ] On blick of the Delete button, remove task from database
     - [ ] Run the function to get the tasks to refresh the list
@@ -35,8 +36,8 @@ Organize DOM as needed along the way
 ## Server Side
 - [ ] post - matching post on client side, get new task
     - [ ] `INSERT INTO` database
-- [ ] get - matching get on client side, grab all tasks
-    - [ ] `SELECT` from database
+- [x] get - matching get on client side, grab all tasks
+    - [x] `SELECT` from database
 - [ ] put - matching put on client side, update complete column
     - [ ] `UPDATE` database
 - [ ] delete - matching delete on client side, delete entire task
