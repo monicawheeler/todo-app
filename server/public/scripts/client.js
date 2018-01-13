@@ -9,6 +9,7 @@ function taskApplication() {
     // Event Listeners
     $('#addTaskButton').on('click', addTask);
     $('#taskList').on('click', '.completeButton', completeTask);
+    $('#completedTasks').on('click', '.uncompleteButton', uncompleteTask);
     $('#taskList, #completedTasks').on('click', '.deleteButton', deleteTask);
 }
 
@@ -31,7 +32,7 @@ function displayAllTasks(tasks) {
         if(task.complete != true) {
             $('#taskList').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span> <button class="completeButton">Complete</button><button class="deleteButton">Delete</button></li>`);
         } else {
-            $('#completedTasks').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span><button class="deleteButton">Delete</button></li>`);
+            $('#completedTasks').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span><button class="uncompleteButton">Uncomplete</button><button class="deleteButton">Delete</button></li>`);
         }
     }
 } // end displayAllTasks
@@ -60,12 +61,23 @@ function completeTask() {
     let currentTaskId = $(this).parent().data('id');
     $.ajax({
         method: 'PUT',
-        url: '/tasks/' + currentTaskId,
+        url: '/tasks/complete/' + currentTaskId,
         success: function(response) {
             getTasks();            
         }
     });
 } // end completeTask
+
+function uncompleteTask() {
+    let currentTaskId = $(this).parent().data('id');
+    $.ajax({
+        method: 'PUT',
+        url: '/tasks/' + currentTaskId,
+        success: function(response) {
+            getTasks();            
+        }
+    });
+} // end uncompleteTask
 
 function deleteTask() {
     let currentTaskId = $(this).parent().data('id');

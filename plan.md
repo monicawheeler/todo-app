@@ -45,6 +45,7 @@ Organize DOM as needed along the way
 - [x] delete - matching delete on client side, delete entire task
     - [x] `DELETE` database
 
+
 ## Style planning/ideas
 - [ ] [Inspiration for style](https://dribbble.com/shots/3642749-Team-Chat-To-Do/attachments/813699)
 - [ ] Style complete and delete buttons as a checkmark and an 'x'

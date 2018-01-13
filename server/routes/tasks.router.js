@@ -31,8 +31,22 @@ router.post('/', (req, res) => {
 });
 
 // update complete status to true
-router.put('/:id', (req,res) => {
+router.put('/complete/:id', (req,res) => {
     const queryText = `UPDATE tasks SET complete='TRUE' WHERE id=$1`;
+    pool.query(queryText, [req.params.id])
+        // runs on successful query
+        .then((result) => {        
+            res.sendStatus(200);
+        })
+        // error handling
+        .catch((err) => {
+            res.sendStatus(500);
+        });
+});
+
+// update complete status to false
+router.put('/:id', (req,res) => {
+    const queryText = `UPDATE tasks SET complete='FALSE' WHERE id=$1`;
     pool.query(queryText, [req.params.id])
         // runs on successful query
         .then((result) => {        
