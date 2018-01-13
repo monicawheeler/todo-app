@@ -8,8 +8,8 @@ function taskApplication() {
 
     // Event Listeners
     $('#addTaskButton').on('click', addTask);
-    $('#taskList').on('click', '#completeButton', completeTask);
-    //$('#taskList').on('click', '#deleteButton', deleteTask);
+    $('#taskList').on('click', '.completeButton', completeTask);
+    //$('#taskList').on('click', '.deleteButton', deleteTask);
 }
 
 function getTasks() {
@@ -21,12 +21,18 @@ function getTasks() {
 } // end getTasks
 
 function displayAllTasks(tasks) {
-    // clear the taskList prior to prepending below
+    // clear the taskList and completedTasks prior to prepending below
     $('#taskList').empty();
+    $('#completedTasks').empty();
     // loop through tasks and prepend taskList on DOM
     for (let i = 0; i < tasks.length; i++) {
         const task = tasks[i];
-        $('#taskList').prepend(`<li><span class="task-description">${task.description}</span> <button class="completeButton">Delete</button><button class="deleteButton">Complete</button></li>`)
+        
+        if(task.complete != true) {
+            $('#taskList').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span> <button class="completeButton">Complete</button><button class="deleteButton">Delete</button></li>`);
+        } else {
+            $('#completedTasks').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span><button class="deleteButton">Delete</button></li>`);
+        }
     }
 } // end displayAllTasks
 
@@ -47,3 +53,15 @@ function addTask() {
         alert('Please enter a task description');
     }
 } // end addTask
+
+function completeTask() {
+    let currentTaskId = $(this).parent().data('id');
+
+    $.ajax({
+        method: 'PUT',
+        url: '/tasks/' + currentTaskId,
+        success: function(response) {
+            getTasks();            
+        }
+    });
+} // end completeTask

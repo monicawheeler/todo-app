@@ -27,8 +27,10 @@ Organize DOM as needed along the way
     - [x] Loop through response and create a list of tasks 
     - [x] Each task will have a Complete and Delete button
 - [ ] PUT to update the task in the database as complete
-    - [ ] On click of the Complete button, update database
-    - [ ] Run the function to get the tasks to refresh the list
+    - [x] Add `data-id` to the task element
+    - [x] On click of the Complete button, update database
+    - [x] Run the function to get the tasks to refresh the list
+    - [ ] Hide the complete button and move the completed list item to completedTasks list 
 - [ ] DELETE to delete the task in the database 
     - [ ] On blick of the Delete button, remove task from database
     - [ ] Run the function to get the tasks to refresh the list
