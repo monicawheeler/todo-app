@@ -1,5 +1,8 @@
 body {
     padding: 0 75px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
     background: #4CB8C4;
     background: -webkit-linear-gradient(to right, #3CD3AD, #4CB8C4);
     background: linear-gradient(to right, #3CD3AD, #4CB8C4);
@@ -9,13 +12,15 @@ body {
     font-size: 18px;
 }
 
-.add-task-container {
+.submit-task-form {
     display: flex;
     align-items: center;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 h1 {
+    margin-bottom: 75px;
     font-weight: 300;
     text-align: center;
 }
@@ -33,6 +38,7 @@ input {
     background: rgba(255,255,255,.1);
     border-radius: 5px;
     padding: 15px;
+    box-sizing: border-box;
     font: 300 24px 'Lato', sans-serif;
     color: #ffffff;
 }
@@ -113,6 +119,7 @@ ul {
     justify-content: space-between;
     padding: 15px 0;
     margin: 2px 0;
+    box-sizing: border-box;
     background: rgba(255,255,255,.1);
     padding: 10px;
     border-radius: 6px;
@@ -136,4 +143,10 @@ ul {
 
 :-moz-placeholder {
     color: #ffffff;
+}
+
+@media screen and (max-width: 650px) {
+    body {
+        padding: 0 20px;
+    }
 }
