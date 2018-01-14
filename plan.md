@@ -53,4 +53,7 @@ Organize DOM as needed along the way
 - [x] Style complete and delete buttons as a checkmark and an 'x'
 
 ## Additional features
-- [ ] GET/SELECT categories
+- [x] GET/SELECT categories
+- [x] POST/INSERT category_id in to tasks table
+- [ ] TODO - style dropdown
+- [ ] TODO - add small text in each task describing its category
