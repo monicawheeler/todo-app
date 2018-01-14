@@ -11,6 +11,11 @@ function taskApplication() {
     $('#taskList').on('click', '.completeButton', completeTask);
     $('#completedTasks').on('click', '.uncompleteButton', uncompleteTask);
     $('#taskList, #completedTasks').on('click', '.deleteButton', deleteTask);
+
+    // Prevent form default submit
+    $('#submitTaskForm').submit(function(e){
+        e.preventDefault();
+    });
 }
 
 function getTasks() {
@@ -52,7 +57,6 @@ function addTask() {
             }
         });
     } else {
-        // TODO: add modal instead of alert
         alert('Please enter a task description');
     }
 } // end addTask
