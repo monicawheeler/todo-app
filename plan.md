@@ -48,6 +48,7 @@ Organize DOM as needed along the way
 - [x] put - matching put on client side, update complete to false
 
 ## Style planning/ideas
-- [ ] [Inspiration for style](https://dribbble.com/shots/3642749-Team-Chat-To-Do/attachments/813699)
-- [ ] Style complete and delete buttons as a checkmark and an 'x'
-- [ ] Move alerts into models
+- [x] [Inspiration for style](https://dribbble.com/shots/3642749-Team-Chat-To-Do/attachments/813699)
+- [x] Load fonts and font awesome
+- [x] Style complete and delete buttons as a checkmark and an 'x'
+- [ ] Move alerts into modal

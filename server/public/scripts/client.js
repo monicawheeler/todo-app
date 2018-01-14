@@ -30,9 +30,9 @@ function displayAllTasks(tasks) {
         const task = tasks[i];
         
         if(task.complete != true) {
-            $('#taskList').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span> <button class="completeButton">Complete</button><button class="deleteButton">Delete</button></li>`);
+            $('#taskList').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span> <button class="completeButton"><i class="fa fa-fw fa-check" aria-hidden="true"></i></button><button class="deleteButton"><i class="fa fa-fw fa-times" aria-hidden="true"></i></button></li>`);
         } else {
-            $('#completedTasks').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span><button class="uncompleteButton">Uncomplete</button><button class="deleteButton">Delete</button></li>`);
+            $('#completedTasks').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span><button class="uncompleteButton"><i class="fa fa-fw fa-check" aria-hidden="true"></i></button><button class="deleteButton"><i class="fa fa-fw fa-times" aria-hidden="true"></i></button></li>`);
         }
     }
 } // end displayAllTasks
@@ -52,7 +52,7 @@ function addTask() {
             }
         });
     } else {
-        // TODO: add model instead of alert
+        // TODO: add modal instead of alert
         alert('Please enter a task description');
     }
 } // end addTask
