@@ -16,6 +16,20 @@ router.get('/', (req, res) => {
         });
 });
 
+// get all categories
+router.get('/categories', (req, res) => {
+    const queryText = 'SELECT * FROM categories ORDER BY id';
+    pool.query(queryText)
+        // runs on success
+        .then((result) => {
+            res.send(result.rows);
+        })
+        // error handling
+        .catch((err) => {
+            res.sendStatus(500);
+        });
+});
+
 // post added task
 router.post('/', (req, res) => {
     const queryText = 'INSERT INTO tasks (description) VALUES($1)';

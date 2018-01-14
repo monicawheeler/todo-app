@@ -5,12 +5,14 @@ function taskApplication() {
 
     // on load functions
     getTasks();
+    getCategories();
 
     // Event Listeners
     $('#addTaskButton').on('click', addTask);
     $('#taskList').on('click', '.completeButton', completeTask);
     $('#completedTasks').on('click', '.uncompleteButton', uncompleteTask);
     $('#taskList, #completedTasks').on('click', '.deleteButton', deleteTask);
+    $('#categorySelect').on('change', getCategories);
 
     // Prevent form default submit
     $('#submitTaskForm').submit(function(e){
@@ -25,6 +27,25 @@ function getTasks() {
         success: displayAllTasks
     });
 } // end getTasks
+
+function getCategories() {
+    $.ajax({
+        method: 'GET',
+        url: '/tasks/categories',
+        success: displayCategories
+    });
+} // end getCategories
+
+function displayCategories(categories) {
+    // clear the categorySelect
+    $('#categorySelect').empty();
+    // loop through categories and append to select on DOM
+    for (let i = 0; i < categories.length; i++) {
+        const category = categories[i];
+        $('#categorySelect').append(`<option value="${category.id}">${category.description}</option>`);
+    }
+} // end getCategories
+
 
 function displayAllTasks(tasks) {
     // clear the taskList and completedTasks prior to prepending below
