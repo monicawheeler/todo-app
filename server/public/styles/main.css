@@ -48,7 +48,7 @@ button {
     padding: 10px;
     border-radius: 50%;
     background: transparent;
-    border: 1px solid #4CB8C4;
+    border: none;
     color: #ffffff;
     font-size: 18px;
     transition: background 300ms;
@@ -64,12 +64,16 @@ input:focus {
     outline: none;
 }
 
+.deleteButton {
+    background-color: rgba(237, 67, 55, .5);
+}
+
 .deleteButton:hover {
     background-color: rgba(237, 67, 55, .75);
 }
 
 .completeButton:hover {
-    background-color: rgba(55, 186, 25, 75);
+    background-color: rgba(55, 186, 25, .75);
 }
 
 .completeButton .fa {
@@ -83,6 +87,10 @@ input:focus {
 
 .addTaskButton {
     font-size: 26px;
+}
+
+.uncompleteButton {
+    background-color: rgba(55, 186, 25, .75);
 }
 
 .uncompleteButton .fa {
@@ -117,12 +125,23 @@ ul {
     flex: 1 0 100%;
     align-items: center;
     justify-content: space-between;
+    overflow: hidden; /* animating in button-wrapper */
     padding: 15px 0;
     margin: 2px 0;
     box-sizing: border-box;
     background: rgba(255,255,255,.1);
     padding: 10px;
     border-radius: 6px;
+}
+
+.task-item:hover .button-wrapper {
+    right: 0;
+}
+
+.button-wrapper {
+    position: relative;
+    right: -150px;
+    transition: all 250ms;
 }
 
 .task-description::first-letter {

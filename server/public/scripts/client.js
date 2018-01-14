@@ -35,9 +35,9 @@ function displayAllTasks(tasks) {
         const task = tasks[i];
         
         if(task.complete != true) {
-            $('#taskList').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span> <button class="completeButton"><i class="fa fa-fw fa-check" aria-hidden="true"></i></button><button class="deleteButton"><i class="fa fa-fw fa-times" aria-hidden="true"></i></button></li>`);
+            $('#taskList').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span><span class="button-wrapper"><button class="completeButton"><i class="fa fa-fw fa-check" aria-hidden="true"></i></button><button class="deleteButton"><i class="fa fa-minus fa-fw" aria-hidden="true"></i></button></span></li>`);
         } else {
-            $('#completedTasks').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span><button class="uncompleteButton"><i class="fa fa-fw fa-check" aria-hidden="true"></i></button><button class="deleteButton"><i class="fa fa-fw fa-times" aria-hidden="true"></i></button></li>`);
+            $('#completedTasks').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span><span class="button-wrapper"><button class="uncompleteButton"><i class="fa fa-fw fa-check" aria-hidden="true"></i></button><button class="deleteButton"><i class="fa fa-minus fa-fw" aria-hidden="true"></i></button></span></li>`);
         }
     }
 } // end displayAllTasks
@@ -62,7 +62,7 @@ function addTask() {
 } // end addTask
 
 function completeTask() {
-    let currentTaskId = $(this).parent().data('id');
+    let currentTaskId = $(this).parents('.task-item').data('id');
     $.ajax({
         method: 'PUT',
         url: '/tasks/complete/' + currentTaskId,
@@ -73,7 +73,7 @@ function completeTask() {
 } // end completeTask
 
 function uncompleteTask() {
-    let currentTaskId = $(this).parent().data('id');
+    let currentTaskId = $(this).parents('.task-item').data('id');
     $.ajax({
         method: 'PUT',
         url: '/tasks/' + currentTaskId,
@@ -84,7 +84,7 @@ function uncompleteTask() {
 } // end uncompleteTask
 
 function deleteTask() {
-    let currentTaskId = $(this).parent().data('id');
+    let currentTaskId = $(this).parents('.task-item').data('id');
     $.ajax({
         method: 'DELETE',
         url: '/tasks/' + currentTaskId,
