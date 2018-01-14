@@ -4,7 +4,7 @@ const pool = require('../modules/pool');
 
 // get all tasks
 router.get('/', (req, res) => {
-    const queryText = 'SELECT * FROM tasks ORDER BY description';
+    const queryText = 'SELECT * FROM tasks ORDER BY category_id';
     pool.query(queryText)
         // runs on success
         .then((result) => {
@@ -32,8 +32,8 @@ router.get('/categories', (req, res) => {
 
 // post added task
 router.post('/', (req, res) => {
-    const queryText = 'INSERT INTO tasks (description) VALUES($1)';
-    pool.query(queryText,[req.body.description])
+    const queryText = 'INSERT INTO tasks (description, category_id) VALUES($1, $2)';
+    pool.query(queryText,[req.body.description, req.body.categoryId])
         // runs on success
         .then((result) => {
             res.sendStatus(201);

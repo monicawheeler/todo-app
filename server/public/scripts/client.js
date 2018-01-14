@@ -12,7 +12,7 @@ function taskApplication() {
     $('#taskList').on('click', '.completeButton', completeTask);
     $('#completedTasks').on('click', '.uncompleteButton', uncompleteTask);
     $('#taskList, #completedTasks').on('click', '.deleteButton', deleteTask);
-    $('#categorySelect').on('change', getCategories);
+    //$('#categorySelect').on('change', getCategories);
 
     // Prevent form default submit
     $('#submitTaskForm').submit(function(e){
@@ -64,12 +64,16 @@ function displayAllTasks(tasks) {
 } // end displayAllTasks
 
 function addTask() {
-    let taskDescription = $('#taskDescription').val()
+    let taskToSend = {
+        description: $('#taskDescription').val(),
+        categoryId: $('#categorySelect').val()
+    };
+
     if(taskDescription != '') {
         $.ajax({
             method: 'POST',
             url: '/tasks',
-            data: {description: taskDescription},
+            data: taskToSend,
             success: function (response) {
                 console.log('response', response);
                 getTasks();
