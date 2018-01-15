@@ -24,7 +24,6 @@ function countTasks() {
     // Count in progress and completed tasks
     let inprogressCount= ($('#taskList li').length).toString();
     let completedCount= ($('#completedTasks li').length).toString();
-    console.log('inprg count:', inprogressCount, 'compltd count:', completedCount);
     $('.inprogress-title .task-count').text(inprogressCount);
     $('.completed-title .task-count').text(completedCount);  
 }
