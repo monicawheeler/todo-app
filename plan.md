@@ -58,4 +58,4 @@ Organize DOM as needed along the way
 - [x] TODO - style dropdown
 - [x] TODO - add small text in each task describing its category
 - [x] TODO - add an arrow on the right in task line item to indicate an action is available
-- [ ] TODO - add a count to h2's for example: "4 TASKS"
+- [x] TODO - add a count to h2's for example: "4 TASKS"
