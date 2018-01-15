@@ -59,3 +59,4 @@ Organize DOM as needed along the way
 - [x] Add small text in each task describing its category
 - [x] Add an arrow on the right in task line item to indicate an action is available
 - [x] Add a count to h2's for example: "4 TASKS"
+- [x] Add a counter on the characters in input and create an alert for over 255 chars

@@ -15,7 +15,8 @@
     <h1>Your Tasklist</h1>
     <div class="add-task-container" id="insertTask">
         <form id="submitTaskForm" class="submit-task-form">
-            <input type="text" id="taskDescription" placeholder="What do you need to get done?" />
+            <label class="task-label" for="taskDescription">Enter Your Task (max characters: 255) - Count: <span id="inputCount"></span></span></label>
+            <input type="text" id="taskDescription" class="task-input" placeholder="Enter your task" />
             <div class="category-select-wrapper">
                 <select id="categorySelect" class="category-select"></select>
             </div>

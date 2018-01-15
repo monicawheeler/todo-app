@@ -6,12 +6,14 @@ function taskApplication() {
     // on load functions
     getTasks();
     getCategories();
+    countInputCharacters();
 
     // Event Listeners
     $('#addTaskButton').on('click', addTask);
     $('#taskList').on('click', '.completeButton', completeTask);
     $('#completedTasks').on('click', '.uncompleteButton', uncompleteTask);
     $('#taskList, #completedTasks').on('click', '.deleteButton', deleteTask);
+    $('#taskDescription').on('keyup', countInputCharacters);
 
     // Prevent form default submit
     $('#submitTaskForm').submit(function(e){
@@ -25,7 +27,12 @@ function countTasks() {
     let completedCount= ($('#completedTasks li').length).toString();
     $('.inprogress-title .task-count').text(inprogressCount);
     $('.completed-title .task-count').text(completedCount);  
-}
+} // end countTasks
+
+function countInputCharacters() {
+    let inputStringLength = $('#taskDescription').val().length;
+    $('#inputCount').text(inputStringLength);
+} // end countInputCharacters
 
 function getTasks() {
     $.ajax({
@@ -34,6 +41,8 @@ function getTasks() {
         success: function(response){
             displayAllTasks(response);
             countTasks();
+            // Clear the character counter
+            $('#inputCount').text('0');
         }
     });
 } // end getTasks
@@ -87,6 +96,12 @@ function addTask() {
         description: $('#taskDescription').val(),
         categoryId: $('#categorySelect').val()
     };
+
+    let inputStringLength = $('#taskDescription').val().length;
+
+    if(inputStringLength > 255) {
+        alert('Please enter 255 characters or less');
+    }
 
     if(taskToSend.description != '') {
         $.ajax({

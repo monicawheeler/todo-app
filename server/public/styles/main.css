@@ -13,6 +13,7 @@ body {
 }
 
 .submit-task-form {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -166,6 +167,13 @@ ul {
 
 .task-description::first-letter {
     text-transform: capitalize;
+}
+
+.task-label {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    font-size: 10px;
 }
 
 .category-select-wrapper {
