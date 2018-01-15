@@ -7,7 +7,6 @@ CREATE TABLE tasks (
 	id SERIAL PRIMARY KEY,
 	description VARCHAR(255) NOT NULL,
 	complete BOOLEAN NOT NULL DEFAULT 'No',
-	date_created DATE,
 	category_id INT REFERENCES "categories" DEFAULT "1"
 );
 
