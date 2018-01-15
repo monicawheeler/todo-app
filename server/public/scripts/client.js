@@ -12,7 +12,6 @@ function taskApplication() {
     $('#taskList').on('click', '.completeButton', completeTask);
     $('#completedTasks').on('click', '.uncompleteButton', uncompleteTask);
     $('#taskList, #completedTasks').on('click', '.deleteButton', deleteTask);
-    //$('#categorySelect').on('change', getCategories);
 
     // Prevent form default submit
     $('#submitTaskForm').submit(function(e){
