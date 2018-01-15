@@ -7,4 +7,4 @@
 - [ ] Open `localhost:2828` in your friendly Chrome browser
 
 Final Application:
-![Screenshot of todo application](https://github.com/monicawheeler/todo-app/blob/master/tasklist-screenshot.png "Screenshot of complete application")
+![Screenshot of todo application](https://github.com/monicawheeler/todo-app/blob/master/server/public/images/tasklist-screenshot.png "Screenshot of complete application")
