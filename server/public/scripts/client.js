@@ -78,7 +78,7 @@ function addTask() {
         categoryId: $('#categorySelect').val()
     };
 
-    if(taskDescription != '') {
+    if(taskToSend.description != '') {
         $.ajax({
             method: 'POST',
             url: '/tasks',
