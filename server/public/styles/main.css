@@ -120,18 +120,32 @@ ul {
 }
 
 .task-item {
+    position: relative;
     display: flex;
     width: 100%;
     flex: 1 0 100%;
     align-items: center;
     justify-content: space-between;
     overflow: hidden; /* animating in button-wrapper */
-    padding: 15px 0;
+    padding: 15px 10px;
     margin: 2px 0;
     box-sizing: border-box;
     background: rgba(255,255,255,.1);
-    padding: 10px;
     border-radius: 6px;
+}
+
+.task-item:after {
+    content: "\f105";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-family: 'fontawesome';
+    transition: all 150px;
+}
+
+.task-item:hover:after {
+    display: none;
 }
 
 .task-item:hover .button-wrapper {
@@ -142,6 +156,12 @@ ul {
     position: relative;
     right: -150px;
     transition: all 250ms;
+}
+
+.category-text {
+    position: absolute;
+    bottom: 5px;
+    font-size: 10px;
 }
 
 .task-description::first-letter {

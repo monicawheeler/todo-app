@@ -54,11 +54,20 @@ function displayAllTasks(tasks) {
     // loop through tasks and prepend taskList on DOM
     for (let i = 0; i < tasks.length; i++) {
         const task = tasks[i];
+
+        let categoryText = '';
+        if(task.category_id === 1) {
+            categoryText = 'Low Priority';
+        } else if (task.category_id === 2) {
+            categoryText = 'Medium Priority';
+        } else {
+            categoryText = 'High Priority';
+        }
         
         if(task.complete != true) {
-            $('#taskList').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span><span class="button-wrapper"><button class="completeButton"><i class="fa fa-fw fa-check" aria-hidden="true"></i></button><button class="deleteButton"><i class="fa fa-minus fa-fw" aria-hidden="true"></i></button></span></li>`);
+            $('#taskList').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span><span class="button-wrapper"><button class="completeButton"><i class="fa fa-fw fa-check" aria-hidden="true"></i></button><button class="deleteButton"><i class="fa fa-minus fa-fw" aria-hidden="true"></i></button></span><div class="category-text">${categoryText}</div></li>`);
         } else {
-            $('#completedTasks').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span><span class="button-wrapper"><button class="uncompleteButton"><i class="fa fa-fw fa-check" aria-hidden="true"></i></button><button class="deleteButton"><i class="fa fa-minus fa-fw" aria-hidden="true"></i></button></span></li>`);
+            $('#completedTasks').prepend(`<li class="task-item" data-id="${task.id}"><span class="task-description">${task.description}</span><span class="button-wrapper"><button class="uncompleteButton"><i class="fa fa-fw fa-check" aria-hidden="true"></i></button><button class="deleteButton"><i class="fa fa-minus fa-fw" aria-hidden="true"></i></button></span><div class="category-text">${categoryText}</div></li>`);
         }
     }
 } // end displayAllTasks

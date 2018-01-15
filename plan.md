@@ -55,7 +55,7 @@ Organize DOM as needed along the way
 ## Additional features
 - [x] GET/SELECT categories
 - [x] POST/INSERT category_id in to tasks table
-- [ ] TODO - style dropdown
-- [ ] TODO - add small text in each task describing its category
-- [ ] TODO - add an arrow on the right in task line item to indicate an action is available
+- [x] TODO - style dropdown
+- [x] TODO - add small text in each task describing its category
+- [x] TODO - add an arrow on the right in task line item to indicate an action is available
 - [ ] TODO - add a count to h2's "4 TASKS"
