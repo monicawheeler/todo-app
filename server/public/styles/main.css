@@ -1,11 +1,11 @@
 body {
     padding: 0 75px 50px;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     box-sizing: border-box;
-    background: #4CB8C4;
-    background: -webkit-linear-gradient(to right, #3CD3AD, #4CB8C4);
-    background: linear-gradient(to right, #3CD3AD, #4CB8C4);
+    background: #000000;
+    background: -webkit-linear-gradient(to right, #53346D, #000000);
+    background: linear-gradient(to right, #53346D, #000000);
     font-family: 'Lato', sans-serif;
     color: #ffffff;
     font-weight: 300;
@@ -193,6 +193,10 @@ ul {
     font-size: 25px;
     font-family: 'fontawesome';
     transform: translateY(-50%);
+}
+
+.category-select:focus {
+    outline: none;
 }
 
 ::-webkit-input-placeholder {
