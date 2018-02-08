@@ -7,5 +7,5 @@
 - Open `localhost:2828` in your friendly Chrome browser
 
 Final Application:
-[Heroku Link](https://pure-waters-87037.herokuapp.com/)
+[Todo App on Heroku](https://pure-waters-87037.herokuapp.com/)
 ![Screenshot of todo application](https://github.com/monicawheeler/todo-app/blob/master/server/public/images/tasklist-screenshot.png "Screenshot of complete application")
